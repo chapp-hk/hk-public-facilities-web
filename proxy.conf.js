@@ -8,11 +8,12 @@ const HttpsProxyAgent = require('https-proxy-agent');
  */
 const proxyConfig = [
   {
-    context: '/',
-    pathRewrite: { '^/': '' },
-    target: '',
+    context: '/api',
+    pathRewrite: { '^/api': '' },
+    target: 'https://www.lcsd.gov.hk',
     changeOrigin: true,
     secure: false,
+    logLevel: 'debug',
   },
 ];
 
