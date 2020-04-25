@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
+import { FacilitiesService } from './facilities.service';
+import { Facility } from './facility';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +10,12 @@ import { finalize } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   isLoading = false;
+  displayedColumns: string[] = ['Name_en', 'Address_en'];
+  facilities: Facility[] = [];
 
-  constructor() {}
+  constructor(private facilitiesService: FacilitiesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.facilitiesService.getBasketballCourts().subscribe((facilities) => (this.facilities = facilities));
+  }
 }
