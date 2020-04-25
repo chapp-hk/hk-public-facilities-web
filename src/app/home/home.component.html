@@ -1,13 +1,27 @@
-<div class="container">
+<div>
   <mat-card>
-    <p>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
-    </p>
     <mat-card-content>
       <mat-card-title translate>Hello world !</mat-card-title>
       <mat-card-subtitle>
         <app-loader [isLoading]="isLoading" size="1"></app-loader>
       </mat-card-subtitle>
+
+      <table mat-table [dataSource]="facilities">
+        <!-- Name Column -->
+        <ng-container matColumnDef="Name_en">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let row">{{ row.Name_en }}</td>
+        </ng-container>
+
+        <!-- Address Column -->
+        <ng-container matColumnDef="Address_en">
+          <th mat-header-cell *matHeaderCellDef>Address</th>
+          <td mat-cell *matCellDef="let row">{{ row.Address_en }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="tr" mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
     </mat-card-content>
   </mat-card>
 </div>
