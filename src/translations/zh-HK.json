@@ -5,5 +5,6 @@
   "Home": "首頁",
   "Version": "版本",
   "COL_TITLE_NAME": "名稱",
-  "COL_TITLE_ADDRESS": "地址"
+  "COL_TITLE_ADDRESS": "地址",
+  "LABEL_FACILITY_TYPE": "設施種類"
 }
