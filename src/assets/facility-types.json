@@ -1,0 +1,22 @@
+[
+  {
+    "name_en": "7-a-side Hard-surface Soccer Pitches (Free Outdoor Pitches/Courts)",
+    "name_zh": "七人硬地足球場 (戶外免費球場)",
+    "value": "facility-hssp7.json"
+  },
+  {
+    "name_en": "7-a-side Soccer Pitches (Artificial Turf Pitch)",
+    "name_zh": "七人足球場 (人造草球場)",
+    "value": "facility-sp7atp.json"
+  },
+  {
+    "name_en": "7-a-side Soccer Pitches (Natural Turf Pitch)",
+    "name_zh": "七人足球場 (天然草球場) 位置",
+    "value": "facility-sp7ntp.json"
+  },
+  {
+    "name_en": "5-a-side Hard-surface Soccer Pitches (Free Outdoor Pitches/Courts)",
+    "name_zh": "五人硬地足球場 (戶外免費球場)",
+    "value": "facility-hssp5.json"
+  }
+]
