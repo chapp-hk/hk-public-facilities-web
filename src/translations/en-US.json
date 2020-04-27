@@ -3,5 +3,8 @@
   "About": "About",
   "Hello world !": "Hello world !",
   "Home": "Home",
-  "Version": "Version"
+  "Version": "Version",
+  "COL_TITLE_NAME": "Name",
+  "COL_TITLE_ADDRESS": "Address",
+  "LABEL_FACILITY_TYPE": "Facility Type"
 }

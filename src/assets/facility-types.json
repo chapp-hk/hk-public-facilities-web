@@ -1,0 +1,177 @@
+[
+  {
+    "name_en": "7-a-side Hard-surface Soccer Pitches (Free Outdoor Pitches/Courts)",
+    "name_zh": "七人硬地足球場 (戶外免費球場)",
+    "value": "facility-hssp7.json"
+  },
+  {
+    "name_en": "7-a-side Soccer Pitches (Artificial Turf Pitch)",
+    "name_zh": "七人足球場 (人造草球場)",
+    "value": "facility-sp7atp.json"
+  },
+  {
+    "name_en": "7-a-side Soccer Pitches (Natural Turf Pitch)",
+    "name_zh": "七人足球場 (天然草球場) 位置",
+    "value": "facility-sp7ntp.json"
+  },
+  {
+    "name_en": "5-a-side Hard-surface Soccer Pitches (Free Outdoor Pitches/Courts)",
+    "name_zh": "五人硬地足球場 (戶外免費球場)",
+    "value": "facility-hssp5.json"
+  },
+  {
+    "name_en": "11-a-side Soccer Pitches (Artificial Turf Pitch)",
+    "name_zh": "十一人足球場 (人造草球場)",
+    "value": "facility-sp11atp.json"
+  },
+  {
+    "name_en": "11-a-side Soccer Pitches (Natural Turf Pitch)",
+    "name_zh": "十一人足球場 (天然草球場)",
+    "value": "facility-sp11ntp.json"
+  },
+  {
+    "name_en": "Archery Ranges",
+    "name_zh": "射箭場",
+    "value": "facility-ar.json"
+  },
+  {
+    "name_en": "Outdoor Table Tennis Tables",
+    "name_zh": "戶外乒乓球檯",
+    "value": "facility-ottt.json"
+  },
+  {
+    "name_en": "Handball Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "手球場 (戶外免費球場)",
+    "value": "facility-hbc.json"
+  },
+  {
+    "name_en": "Netball Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "投球場 (戶外免費球場)",
+    "value": "facility-nbc.json"
+  },
+  {
+    "name_en": "Volleyball Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "排球場 (戶外免費球場)",
+    "value": "facility-vbc.json"
+  },
+  {
+    "name_en": "Hockey Grounds (Artificial Turf Pitch)",
+    "name_zh": "曲棍球場 (人造草球場)",
+    "value": "facility-hgatp.json"
+  },
+  {
+    "name_en": "Cricket Ground (Artificial Turf Pitch)",
+    "name_zh": "板球場 (人造草球場)",
+    "value": "facility-cgatp.json"
+  },
+  {
+    "name_en": "Cricket Ground (Natural Turf Pitch)",
+    "name_zh": "板球場 (天然草球場)",
+    "value": "facility-cgntp.json"
+  },
+  {
+    "name_en": "Cricket Ground (Free Outdoor Pitches/Courts)",
+    "name_zh": "板球場 (戶外免費球場)",
+    "value": "facility-cgf.json"
+  },
+  {
+    "name_en": "Baseball Pitches (Natural Turf Pitch)",
+    "name_zh": "棒球場 (天然草球場)",
+    "value": "facility-bbp.json"
+  },
+  {
+    "name_en": "Skateparks",
+    "name_zh": "極限運動場",
+    "value": "facility-sp.json"
+  },
+  {
+    "name_en": "Model Boat Pools",
+    "name_zh": "模型船池",
+    "value": "facility-mbp.json"
+  },
+  {
+    "name_en": "Model Car Play Area",
+    "name_zh": "模型車場",
+    "value": "facility-mcpa.json"
+  },
+  {
+    "name_en": "Rugby Pitches (Artificial Turf Pitch)",
+    "name_zh": "欖球場 (人造草球場)",
+    "value": "facility-rpatp.json"
+  },
+  {
+    "name_en": "Rugby Pitches (Natural Turf Pitch)",
+    "name_zh": "欖球場 (天然草球場)",
+    "value": "facility-rpntp.json"
+  },
+  {
+    "name_en": "Beach Volleyball Courts",
+    "name_zh": "沙灘排球場",
+    "value": "facility-bvbc.json"
+  },
+  {
+    "name_en": "Skateboard Ground",
+    "name_zh": "滑板場",
+    "value": "facility-sbg.json"
+  },
+  {
+    "name_en": "Roller Hockey Court (Free Outdoor Pitches/Courts)",
+    "name_zh": "滾軸曲棍球場 (戶外免費球場)",
+    "value": "facility-rhc.json"
+  },
+  {
+    "name_en": "Roller Skating Rinks",
+    "name_zh": "滾軸溜冰場",
+    "value": "facility-rsr.json"
+  },
+  {
+    "name_en": "Barbecue Sites",
+    "name_zh": "燒烤場",
+    "value": "facility-bbqs.json"
+  },
+  {
+    "name_en": "Basketball Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "籃球場 (戶外免費球場)",
+    "value": "facility-bkbc.json"
+  },
+  {
+    "name_en": "Tennis Courts",
+    "name_zh": "網球場",
+    "value": "facility-tc.json"
+  },
+  {
+    "name_en": "Tennis Practice Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "網球練習場 (戶外免費球場)",
+    "value": "facility-tpc.json"
+  },
+  {
+    "name_en": "Jogging Tracks and Fitness Trails",
+    "name_zh": "緩跑徑 / 健身徑",
+    "value": "facility-jtft.json"
+  },
+  {
+    "name_en": "Badminton Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "羽毛球場(戶外免費球場)",
+    "value": "facility-bmtc.json"
+  },
+  {
+    "name_en": "Bowling Greens",
+    "name_zh": "草地滾球場",
+    "value": "facility-bg.json"
+  },
+  {
+    "name_en": "Sports Grounds",
+    "name_zh": "運動場",
+    "value": "facility-sg.json"
+  },
+  {
+    "name_en": "Gateball Courts (Free Outdoor Pitches/Courts)",
+    "name_zh": "門球場 (戶外免費球場)",
+    "value": "facility-gbc.json"
+  },
+  {
+    "name_en": "Sports Centres",
+    "name_zh": "體育館",
+    "value": "facility-sc.json"
+  }
+]

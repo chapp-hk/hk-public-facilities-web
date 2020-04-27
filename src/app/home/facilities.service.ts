@@ -7,7 +7,7 @@ import { Facility } from './facility';
 export class FacilitiesService {
   constructor(private httpClient: HttpClient) {}
 
-  getBasketballCourts(): Observable<Facility[]> {
-    return this.httpClient.get<Facility[]>('/datagovhk/facility/facility-bkbc.json');
+  getFacilities(type: string): Observable<Facility[]> {
+    return this.httpClient.get<Facility[]>(`/datagovhk/facility/${type}`);
   }
 }
