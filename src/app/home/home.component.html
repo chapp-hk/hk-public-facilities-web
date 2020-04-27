@@ -6,14 +6,7 @@
         <app-loader [isLoading]="isLoading" size="1"></app-loader>
       </mat-card-subtitle>
 
-      <mat-form-field>
-        <mat-label>{{ 'LABEL_FACILITY_TYPE' | translate }}</mat-label>
-        <mat-select (selectionChange)="onFacilityOptionSelected($event.value)">
-          <mat-option *ngFor="let facilityType of facilityTypes" [value]="facilityType.value">
-            {{ facilityType.name_en }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-home-selector (facilityType)="onFacilityTypeSelected($event)"></app-home-selector>
 
       <mat-table [dataSource]="facilities">
         <!-- Name Column -->

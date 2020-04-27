@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FacilitiesService } from './facilities.service';
 import { Facility } from './facility';
-import facilityTypeJson from '../../assets/facility-types.json';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +9,6 @@ import facilityTypeJson from '../../assets/facility-types.json';
 })
 export class HomeComponent implements OnInit {
   isLoading = false;
-  facilityTypes = facilityTypeJson;
   displayedColumns: string[] = ['Name_en', 'Address_en'];
   facilities: Facility[] = [];
 
@@ -18,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  onFacilityOptionSelected(type: string) {
+  onFacilityTypeSelected(type: string) {
     this.facilitiesService.getFacilities(type).subscribe((facilities) => (this.facilities = facilities));
   }
 }
