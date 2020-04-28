@@ -7,7 +7,10 @@
         <app-loader [isLoading]="isLoading" size="1"></app-loader>
       </mat-card-subtitle>
 
-      <app-home-selector (facilityType)="onFacilityTypeSelected($event)"></app-home-selector>
+      <app-home-selector
+        [facilityTypes]="facilityTypes"
+        (selectedFacility)="onFacilityTypeSelected($event)"
+      ></app-home-selector>
 
       <app-facilities-list [facilities]="facilities" [displayedColumns]="displayedColumns"></app-facilities-list>
     </mat-card-content>

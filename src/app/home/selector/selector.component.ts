@@ -1,5 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import facilityTypeJson from '../../../assets/facility-types.json';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home-selector',
@@ -7,15 +6,16 @@ import facilityTypeJson from '../../../assets/facility-types.json';
   styleUrls: ['./selector.component.scss'],
 })
 export class SelectorComponent implements OnInit {
+  @Input()
+  facilityTypes: any;
   @Output()
-  facilityType: EventEmitter<string> = new EventEmitter();
-  facilityTypes = facilityTypeJson;
+  selectedFacility: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onFacilityOptionSelected(type: string) {
-    this.facilityType.emit(type);
+    this.selectedFacility.emit(type);
   }
 }
