@@ -12,7 +12,10 @@
         (selectedFacility)="onFacilityTypeSelected($event)"
       ></app-home-selector>
 
-      <app-facilities-list [facilities]="facilities" [displayedColumns]="displayedColumns"></app-facilities-list>
+      <app-home-facilities-list
+        [facilities]="facilities"
+        [displayedColumns]="displayedColumns"
+      ></app-home-facilities-list>
     </mat-card-content>
   </mat-card>
 </div>
