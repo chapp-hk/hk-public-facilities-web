@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectorComponent } from './selector.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('SelectorComponent', () => {
   let component: SelectorComponent;
@@ -8,6 +9,7 @@ describe('SelectorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()],
       declarations: [SelectorComponent],
     }).compileComponents();
   }));

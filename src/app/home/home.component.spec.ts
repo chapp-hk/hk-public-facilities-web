@@ -9,6 +9,7 @@ import { CoreModule } from '@core';
 import { SharedModule } from '@shared';
 import { MaterialModule } from '@app/material.module';
 import { HomeComponent } from './home.component';
+import { FacilitiesService } from './facilities.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -27,7 +28,7 @@ describe('HomeComponent', () => {
         HttpClientTestingModule,
       ],
       declarations: [HomeComponent],
-      providers: [],
+      providers: [FacilitiesService],
     }).compileComponents();
   }));
 
