@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  onFacilityOptionSelected(type: string) {
+  onFacilityTypeSelected(type: string) {
     this.facilitiesService.getFacilities(type).subscribe((facilities) => (this.facilities = facilities));
   }
 }

@@ -2,35 +2,20 @@
   <mat-card>
     <mat-card-content>
       <mat-card-title translate>Hello world !</mat-card-title>
+
       <mat-card-subtitle>
         <app-loader [isLoading]="isLoading" size="1"></app-loader>
       </mat-card-subtitle>
 
-      <mat-form-field>
-        <mat-label>{{ 'LABEL_FACILITY_TYPE' | translate }}</mat-label>
-        <mat-select (selectionChange)="onFacilityOptionSelected($event.value)">
-          <mat-option *ngFor="let facilityType of facilityTypes" [value]="facilityType.value">
-            {{ facilityType.name_en }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-home-selector
+        [facilityTypes]="facilityTypes"
+        (selectedFacility)="onFacilityTypeSelected($event)"
+      ></app-home-selector>
 
-      <mat-table [dataSource]="facilities">
-        <!-- Name Column -->
-        <ng-container matColumnDef="Name_en">
-          <mat-header-cell *matHeaderCellDef>{{ 'COL_TITLE_NAME' | translate }}</mat-header-cell>
-          <mat-cell *matCellDef="let row">{{ row.Name_en }}</mat-cell>
-        </ng-container>
-
-        <!-- Address Column -->
-        <ng-container matColumnDef="Address_en">
-          <mat-header-cell *matHeaderCellDef>{{ 'COL_TITLE_ADDRESS' | translate }}</mat-header-cell>
-          <mat-cell *matCellDef="let row">{{ row.Address_en }}</mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-      </mat-table>
+      <app-home-facilities-list
+        [facilities]="facilities"
+        [displayedColumns]="displayedColumns"
+      ></app-home-facilities-list>
     </mat-card-content>
   </mat-card>
 </div>

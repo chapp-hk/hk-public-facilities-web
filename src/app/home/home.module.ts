@@ -10,6 +10,8 @@ import { MaterialModule } from '@app/material.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FacilitiesService } from './facilities.service';
+import { SelectorComponent } from './selector/selector.component';
+import { FacilitiesListComponent } from './facilities-list/facilities-list.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,7 @@ import { FacilitiesService } from './facilities.service';
     Angulartics2Module,
     HomeRoutingModule,
   ],
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, SelectorComponent, FacilitiesListComponent],
   providers: [FacilitiesService],
 })
 export class HomeModule {}

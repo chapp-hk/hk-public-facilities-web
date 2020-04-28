@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>{{ 'LABEL_FACILITY_TYPE' | translate }}</mat-label>
+  <mat-select (selectionChange)="onFacilityOptionSelected($event.value)">
+    <mat-option *ngFor="let facilityType of facilityTypes" [value]="facilityType.value">
+      {{ facilityType.name_en }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

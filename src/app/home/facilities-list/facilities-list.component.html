@@ -1,0 +1,16 @@
+<mat-table [dataSource]="facilities">
+  <!-- Name Column -->
+  <ng-container matColumnDef="Name_en">
+    <mat-header-cell *matHeaderCellDef>{{ 'COL_TITLE_NAME' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.Name_en }}</mat-cell>
+  </ng-container>
+
+  <!-- Address Column -->
+  <ng-container matColumnDef="Address_en">
+    <mat-header-cell *matHeaderCellDef>{{ 'COL_TITLE_ADDRESS' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.Address_en }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
