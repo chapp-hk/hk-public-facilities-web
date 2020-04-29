@@ -1,21 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-
 import { FacilitiesService } from './facilities.service';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Facility } from './facility';
+import { of } from 'rxjs';
 
 describe('FacilitiesService', () => {
   let service: FacilitiesService;
-  let httpTestingController: HttpTestingController;
+  let httpClientSpy: { get: jasmine.Spy };
   let expectedFacilities: Facility[];
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [FacilitiesService],
-    });
-    service = TestBed.inject(FacilitiesService);
-    httpTestingController = TestBed.inject(HttpTestingController);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    service = new FacilitiesService(<any>httpClientSpy);
 
     expectedFacilities = [
       {
@@ -48,21 +42,18 @@ describe('FacilitiesService', () => {
     ] as Facility[];
   });
 
-  afterEach(() => {
-    httpTestingController.verify();
-  });
+  it('should return expected facilities by calling once with correct type', () => {
+    let type = 'some_type';
+    httpClientSpy.get.and.returnValue(of(expectedFacilities));
 
-  it('should return expected facilities by calling once', () => {
     service
-      .getFacilities('type')
+      .getFacilities(type)
       .subscribe(
-        (facilities) => expect(facilities).toEqual(expectedFacilities, 'should return expected employees'),
+        (facilities) => expect(facilities).toEqual(expectedFacilities, 'should return expected facilities'),
         fail
       );
 
-    const req = httpTestingController.expectOne('/datagovhk/facility/type');
-    expect(req.request.method).toEqual('GET');
-
-    req.flush(expectedFacilities); //Return expectedEmps
+    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
+    expect(httpClientSpy.get).toHaveBeenCalledWith(`${service.urlPath}${type}`);
   });
 });

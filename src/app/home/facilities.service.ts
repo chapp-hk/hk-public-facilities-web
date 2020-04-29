@@ -5,9 +5,11 @@ import { Facility } from './facility';
 
 @Injectable()
 export class FacilitiesService {
+  urlPath = '/datagovhk/facility/';
+
   constructor(private httpClient: HttpClient) {}
 
   getFacilities(type: string): Observable<Facility[]> {
-    return this.httpClient.get<Facility[]>(`/datagovhk/facility/${type}`);
+    return this.httpClient.get<Facility[]>(`${this.urlPath}${type}`);
   }
 }
