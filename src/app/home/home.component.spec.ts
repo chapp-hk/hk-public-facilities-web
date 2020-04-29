@@ -17,7 +17,7 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  // Create a fake TwainService object with a `getQuote()` spy
+  // Create a fake Facilities Service object with a `getFacilities()` spy
   const facilitiesService = jasmine.createSpyObj('FacilitiesService', ['getFacilities']);
   let expectedFacilities: Facility[];
   let getFacilitiesSpy: jasmine.Spy;
