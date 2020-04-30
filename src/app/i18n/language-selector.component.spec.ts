@@ -8,8 +8,8 @@ import { I18nService } from './i18n.service';
 import { LanguageSelectorComponent } from './language-selector.component';
 
 class MockI18nService {
-  private lang: string = '';
   supportedLanguages: string[] = ['zh-HK', 'zh-TW'];
+  private lang = '';
 
   set language(language: string) {
     this.lang = language;
