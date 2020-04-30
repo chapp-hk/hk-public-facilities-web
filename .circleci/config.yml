@@ -49,7 +49,7 @@ jobs:
       - run:
           name: End to End Test
           command: npm run e2e
-      - store_test_results:
+      - store_artifacts:
           path: ./reports/coverage
 
 workflows:
