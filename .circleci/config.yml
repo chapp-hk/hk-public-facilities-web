@@ -41,14 +41,10 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
             - v1-dependencies-
-      # Lint the source code
+      # Test the source code in CI mode
       - run:
-          name: Linting
-          command: npm run lint
-      # Test the source code
-      - run:
-          name: Testing
-          command: npm test
+          name: Testing in CI mode
+          command: npm run test:ci
       # End to End test
       - run:
           name: End to End Test
