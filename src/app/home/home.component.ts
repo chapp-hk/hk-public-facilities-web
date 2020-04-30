@@ -10,15 +10,32 @@ import facilityTypeJson from '../../assets/facility-types.json';
 })
 export class HomeComponent implements OnInit {
   isLoading = false;
-  facilityTypes = facilityTypeJson;
-  displayedColumns: string[] = ['Name_en', 'Address_en'];
   facilities: Facility[] = [];
+  readonly facilityTypes = facilityTypeJson;
+  readonly displayedColumns: string[] = ['Name_en', 'Address_en'];
 
   constructor(private facilitiesService: FacilitiesService) {}
 
   ngOnInit() {}
 
   onFacilityTypeSelected(type: string) {
-    this.facilitiesService.getFacilities(type).subscribe((facilities) => (this.facilities = facilities));
+    this.facilities = [];
+    this.isLoading = true;
+
+    this.facilitiesService
+      .getFacilities(type)
+      .subscribe(
+        (facilities) => this.onGetFacilitiesSuccess(facilities),
+        (error) => this.onGetFacilitiesError(error)
+      )
+      .add(() => {
+        this.isLoading = false;
+      });
   }
+
+  private onGetFacilitiesSuccess(facilities: Facility[]) {
+    this.facilities = facilities;
+  }
+
+  private onGetFacilitiesError(error: any) {}
 }
