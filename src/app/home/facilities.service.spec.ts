@@ -9,7 +9,7 @@ describe('FacilitiesService', () => {
 
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-    service = new FacilitiesService(<any>httpClientSpy);
+    service = new FacilitiesService(httpClientSpy as any);
 
     expectedFacilities = [
       {
@@ -43,7 +43,7 @@ describe('FacilitiesService', () => {
   });
 
   it('should return expected facilities by calling once with correct type', () => {
-    let type = 'some_type';
+    const type = 'some_type';
     httpClientSpy.get.and.returnValue(of(expectedFacilities));
 
     service
