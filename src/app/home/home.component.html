@@ -1,12 +1,6 @@
-<div>
+<div class="container">
   <mat-card>
     <mat-card-content>
-      <mat-card-title translate>Hello world !</mat-card-title>
-
-      <mat-card-subtitle>
-        <app-loader [isLoading]="isLoading" size="1"></app-loader>
-      </mat-card-subtitle>
-
       <app-home-selector
         [facilityTypes]="facilityTypes"
         (selectedFacility)="onFacilityTypeSelected($event)"
@@ -16,6 +10,8 @@
         [facilities]="facilities"
         [displayedColumns]="displayedColumns"
       ></app-home-facilities-list>
+
+      <app-loader [isLoading]="isLoading" size="1"></app-loader>
     </mat-card-content>
   </mat-card>
 </div>

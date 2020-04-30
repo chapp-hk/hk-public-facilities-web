@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,16 +11,13 @@ import { MaterialModule } from '@app/material.module';
 import { HomeComponent } from './home.component';
 import { FacilitiesService } from './facilities.service';
 import { Facility } from './facility';
-import { of } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('HomeComponent', () => {
+  const requestUrl = '/api/datagovhk/facility/any-type';
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-
-  // Create a fake Facilities Service object with a `getFacilities()` spy
-  const facilitiesService = jasmine.createSpyObj('FacilitiesService', ['getFacilities']);
-  let expectedFacilities: Facility[];
-  let getFacilitiesSpy: jasmine.Spy;
+  let httpTestingController: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,16 +32,24 @@ describe('HomeComponent', () => {
         HttpClientTestingModule,
       ],
       declarations: [HomeComponent],
-      providers: [{ provide: FacilitiesService, useValue: facilitiesService }],
+      providers: [FacilitiesService],
     }).compileComponents();
   }));
 
   beforeEach(() => {
+    httpTestingController = TestBed.inject(HttpTestingController);
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
 
-    expectedFacilities = [
+  afterEach(() => {
+    // After every test, assert that there are no more pending requests.
+    httpTestingController.verify();
+  });
+
+  it('should call get facilities and set facilites value', () => {
+    const expectedFacilities = [
       {
         District_en: 'some en district',
         District_cn: 'some cn district',
@@ -74,14 +79,30 @@ describe('HomeComponent', () => {
       },
     ] as Facility[];
 
-    // Make the spy return a synchronous Observable with the test data
-    getFacilitiesSpy = facilitiesService.getFacilities.and.returnValue(of(expectedFacilities));
+    component.onFacilityTypeSelected('any-type');
+
+    const request = httpTestingController.expectOne(requestUrl);
+
+    // Respond with mock data, causing Observable to resolve.
+    // Subscribe callback asserts that correct data was returned.
+    request.flush(expectedFacilities);
+
+    expect(component.facilities).toEqual(expectedFacilities);
   });
 
-  it('should call get facilities and set facilites value', () => {
-    component.onFacilityTypeSelected('type');
+  it('should return error when http error', () => {
+    const errorResponse = new HttpErrorResponse({
+      error: 'test 404 error',
+      status: 404,
+      statusText: 'Not Found',
+    });
 
-    expect(getFacilitiesSpy.calls.any()).toBe(true, 'getFacilities called');
-    expect(component.facilities).toEqual(expectedFacilities);
+    component.onFacilityTypeSelected('any-type');
+
+    const request = httpTestingController.expectOne(requestUrl);
+
+    request.flush('error', errorResponse);
+
+    expect(component.facilities).toEqual([]);
   });
 });
