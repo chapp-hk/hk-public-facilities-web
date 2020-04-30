@@ -34,6 +34,13 @@ jobs:
     docker:
       - image: circleci/node:14.0-browsers
     steps:
+      # Checkout the code from the branch into the working_directory
+      - checkout
+      # Restore local dependencies from cache
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
       # Lint the source code
       - run:
           name: Linting
