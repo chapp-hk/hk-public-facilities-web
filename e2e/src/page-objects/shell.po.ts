@@ -5,10 +5,4 @@
 
 import { browser, element, by } from 'protractor';
 
-export class ShellPage {
-  welcomeText = element(by.css('app-root mat-card-title'));
-
-  getParagraphText() {
-    return this.welcomeText.getText();
-  }
-}
+export class ShellPage {}
